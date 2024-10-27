@@ -1,10 +1,10 @@
-from django.http import HttpResponse
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("<h1>A view index funciona, Wow!</h1>")
+    return render(request, 'index.html')
 
 def home(request):
-    return HttpResponse("<h1>Página Principal</h1>")
+    return render(request, 'home.html')
 
 def sobre(request):
-    return HttpResponse("<h1>Sistema 1.0 desenvolvido por mim mesmo.</h1>")
+    return render(request, 'sobre.html')
