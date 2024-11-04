@@ -8,3 +8,5 @@ def home(request):
 
 def sobre(request):
     return render(request, 'sobre.html')
+def exibir_item(request, id):
+    return render(request, "exibir_item.html", {'id':id})
