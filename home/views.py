@@ -9,5 +9,8 @@ def home(request):
 def sobre(request):
     return render(request, 'sobre.html')
 
+def contato(request):
+    return render(request, 'contato.html')
+
 def exibir_item(request, id):
-    return render(request, "exibir_item.html", {'id': id})
+    return render(request, 'exibir_item.html', {'id': id})
