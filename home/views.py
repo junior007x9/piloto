@@ -29,6 +29,7 @@ def produtos(request):
     }
     return render(request, 'produto/lista.html',contexto)
 
+
 def produtos(request):
     return render(request, 'produtos/lista.html')
 

@@ -8,31 +8,11 @@
 {% block conteudo %}
 
   <h1>Listagem de Produtos</h1>
-  <table class="table table-bordered table-hover w-75 mx-auto">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Código</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Valor (R$)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Notebook</td>
-            <td>2.500,00</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Monitor</td>
-            <td>500,00</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Roteador Wi-Fi</td>
-            <td>150,00</td>
-        </tr>
-    </tbody>
-</table>
+  {% for item in lista %}
+        {{item.id}}      
+        {{item.nome}}
+        {{item.preco}}
+        <br>
+        {% endfor %}
 
 {% endblock %}

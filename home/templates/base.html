@@ -135,7 +135,28 @@
                             <h5>{% block titulo_page %} Home {% endblock titulo_page %}</h5>
                         </div>
                         <div class="card-body card-body-custom">
-                           <h5>{% block conteudo  %} Bem-Vindo ao nosso Sistema {% endblock conteudo %}</h5>
+                           <h5>{% block conteudo  %} Bem-Vindo ao nosso Sistema! {% endblock conteudo %}</h5>
+                           <table class="table table-bordered table-hover">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Descrição</th>
+                                    <th scope="col">Valor (R$)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for item in lista %}
+                                <tr>
+                                    <td> {{item.id}}</td>
+                                    <td> {{item.nome}}</td>
+                                    <td>{{item.preco}}</td>
+                                </tr>
+                                {% endfor %}
+                              
+                            </tbody>
+                        </table>
+                        
+                    
                         </div>
                     </div>
                 </div>
