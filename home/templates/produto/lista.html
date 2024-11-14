@@ -1,18 +1,10 @@
-{% extends 'base.html' %}
-
-{% block titulo %} Produtos {% endblock %}
-
-{% block titulo_page %} Listagem de Produtos{% endblock %}
-
-
-{% block conteudo %}
-
-  <h1>Listagem de Produtos</h1>
-  {% for item in lista %}
-        {{item.id}}      
-        {{item.nome}}
-        {{item.preco}}
-        <br>
-        {% endfor %}
-
+<!-- produtos/lista.html -->
+{% extends 'base.html' %} {% block titulo_page %}Produtos{% endblock %} {% block
+conteudo %}
+<h2>Lista de Produtos</h2>
+<ul>
+  {% for produto in lista %}
+  <li>{{ produto.nome }} - R$ {{ produto.preco }}</li>
+  {% endfor %}
+</ul>
 {% endblock %}

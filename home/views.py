@@ -1,14 +1,15 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Item
+from django.shortcuts import render
 
 def index(request):
     return render(request, 'index.html')
+
 def home(request):
     context = {
         'username': 'carlos',
         'items': ['lapis', 'caneta', 'borracha']
     }
     return render(request, 'home.html', context)
+
 def produtos(request):
     contexto = {
         'lista': [
@@ -27,30 +28,23 @@ def produtos(request):
             {'id': 13, 'nome': 'Roteador Wi-Fi', 'preco': '220,00'},
         ],
     }
-    return render(request, 'produto/lista.html',contexto)
-
-
-def produtos(request):
-    return render(request, 'produtos/lista.html')
-
+    return render(request, 'produtos/lista.html', contexto)
 
 def exibir_item(request, id):
-    item = get_object_or_404(Item, id=id)
+    # Dados simulados
+    item = {
+        'id': id,
+        'nome': 'Item Exemplo',
+        'descricao': 'Descrição do item exemplo.',
+        'preco': '100,00'
+    }
     return render(request, 'produtos/exibir_item.html', {'item': item})
-
 
 def contato(request):
     return render(request, 'contato.html')
-
-def exibir_item(request, id):
-    item = Item.objects.get(id=id)
-    return render(request, 'exibir_item.html', {'id': item.id})
 
 def menu(request):
     return render(request, 'menu.html')
 
 def sobre(request):
     return render(request, 'sobre.html')
-
-def produtos(request):
-    return render(request, 'produtos/lista.html')
