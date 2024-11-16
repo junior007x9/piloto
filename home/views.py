@@ -40,6 +40,19 @@ def exibir_item(request, id):
     }
     return render(request, 'produtos/exibir_item.html', {'item': item})
 
+def dia_semana(request, numero):
+    dias_da_semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
+    if 1 <= numero <= 7:
+        dia = dias_da_semana[numero - 1]
+    else:
+        dia = 'Dia inválido'
+
+    contexto = {
+        'numero': numero,
+        'dia': dia
+    }
+    return render(request, 'diasemana.html', contexto)
+
 def contato(request):
     return render(request, 'contato.html')
 

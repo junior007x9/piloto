@@ -9,4 +9,5 @@ urlpatterns = [
     path('menu/', views.menu, name='menu'),
     path('sobre/', views.sobre, name='sobre'),
     path('produtos/', views.produtos, name='produtos'),
+    path('dia_semana/<int:numero>/', views.dia_semana, name='dia_semana'),  # Adicionada nova URL
 ]
