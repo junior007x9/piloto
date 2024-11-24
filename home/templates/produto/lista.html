@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %} Produtos {% endblock %}
+
+{% block titulo %} Listagem de produtos {% endblock %}
+
+{% block conteudo %}
+
+<!-- Botão para acessar o formulário algo de errado nao esta certo kkkkk  -->
+<button class="btn btn-primary" onclick="location.href='{% url 'fomulario2' %}'">Adicionar Produto</button>
+
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Código</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Valor (R$)</th>
+            <th scope="col">Ações</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for produto in lista %}
+        <tr> <!-- Cada produto deve estar em uma nova linha -->
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.preco }}</td>
+            <td>
+                
+                 <!-- Botão para ver detalhes -->
+                <button 
+                class="btn btn-info btn-sm" 
+                onclick="location.href='{% url 'ver_detalhes' produto.id %}'">
+                Ver Detalhes
+                </button>
+        
+                <!-- Botão para editar produto -->
+                <button 
+                class="btn btn-warning btn-sm" 
+                onclick="location.href='{% url 'editar_produto' produto.id %}'">
+                Editar Produto
+                
+                <!-- Botão para excluir -->
+                <form method="POST" action="{% url 'excluir_produto' produto.id %}">
+                    {% csrf_token %}
+                    <button style="margin: 5px;" type="submit" class="btn btn-danger">Excluir</button> <!-- Usando um botão para excluir -->
+                </form>
+                </button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

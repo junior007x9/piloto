@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block titulo  %} editar_produto{% endblock %}
+
+
+
+{% block conteudo  %}  
+
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }} <!-- Renderiza cada campo do formulário com <p> tags -->
+        <button class="btn btn-primary" type="submit">Enviar</button>
+        <button class="btn btn-primary" onclick="location.href='{% url 'produtos' %}'">Voltar à Lista</button>
+        
+    </form>
+
+
+
+{% endblock %}

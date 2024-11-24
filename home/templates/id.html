@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Exibir Item{% endblock %}
+
+{% block titulo %}Detalhes do Item{% endblock %}
+
+{% block conteudo %}
+<form method="post">
+    {% csrf_token %}
+    <label for="item_id">Digite o ID do item:</label>
+    <input type="number" id="exibir_item" name="id" min="1" max="10000000" required>
+    <button type="submit">Enviar</button>
+</form>
+
+{% if id %}
+    <p>Você está visualizando o item com ID: <strong>{{ id }}</strong></p>
+{% else %}
+    <p>Nenhum item selecionado.</p>
+{% endif %}
+{% endblock %}

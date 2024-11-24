@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Dia da Semana{% endblock %}
+
+{% block titulo %}Informações do Dia da Semana{% endblock %}
+
+{% block conteudo %}
+<form method="post">
+    {% csrf_token %}
+    <label for="dia">Digite um número de 1 a 7:</label>
+    <input type="number" id="dia" name="dia" min="1" max="7" required>
+    <button type="submit">Enviar</button>
+</form>
+<p>O dia correspondente ao número {{ dia }} é: <strong>{{ dia_nome }}</strong></p>
+{% endblock %}
