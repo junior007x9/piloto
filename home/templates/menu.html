@@ -1,56 +1,42 @@
-<!DOCTYPE html>
+<!-- saved from url=(0091)4a.html -->
 <html>
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-<body>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+  </head>
+  <body>
     <ul class="nav flex-column">
-        <li class="nav-item">
-            <a href="{% url 'index' %}" class="nav-link"><i class="fas fa-home"></i> <span>Home</span></a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fas fa-chart-bar"></i> <span>Views</span></a>
-            <ul class="submenu nav flex-column">
-                <li class="nav-item">
-                    <a href="{% url 'exibir_item' id=1 %}" class="nav-link"><i class="fas fa-eye"></i> Exibir Item</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'dia_semana' dia=3 %}" class="nav-link"><i class="fas fa-calendar-day"></i> Dia da Semana</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'produtos' %}" class="nav-link"><i class="fas fa-box"></i> Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'fomulario' %}" class="nav-link"><i class="fas fa-envelope"></i> Formulário Contato</a>
-                </li>
-                <li class="nav-item">
-                    <a href="{% url 'fomulario2' %}" class="nav-link"><i class="fas fa-clipboard-list"></i> Formulário Produto</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fas fa-users"></i> <span>Users</span></a>
-            <ul class="submenu nav flex-column">
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-list"></i> User List</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-user-plus"></i> Add User</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link"><i class="fas fa-cogs"></i> <span>Settings</span></a>
-            <ul class="submenu nav flex-column">
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-wrench"></i> General</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link"><i class="fas fa-lock"></i> Security</a>
-                </li>
-            </ul>
-        </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link"
+          ><i class="fas fa-chart-bar"></i> <span>Views</span></a
+        >
+        <ul class="submenu nav flex-column">
+          <li class="nav-item">
+            <a href="{% url 'exibir_item' id=1 %}" class="nav-link"
+              ><i class="fas fa-eye"></i> Exibir Item</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'dia_semana' dia=3 %}" class="nav-link"
+              ><i class="fas fa-calendar-day"></i> Dia da Semana</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'produtos' %}" class="nav-link"
+              ><i class="fas fa-box-open"></i> Produtos</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'fomulario' %}" class="nav-link"
+              ><i class="fas fa-envelope"></i> Formulário Contato</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'fomulario2' %}" class="nav-link"
+              ><i class="fas fa-file-alt"></i> Formulário Produto</a
+            >
+          </li>
+        </ul>
+      </li>
     </ul>
-</body>
+  </body>
 </html>
